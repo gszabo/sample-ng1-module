@@ -18,13 +18,15 @@ class HelloEditorDirective {
   static create() {
     return [() => ({
       restrict: 'E',
+      bindToController: true,
       scope: {
         helloText: '='
       },
+      template: require('./index.jade')(),
       controllerAs: 'ctrl',
       controller: ['hello', HelloEditorDirective],
       link: function(scope, element, attributes, controller) {
-        controlle.ngOnInit();
+        controller.ngOnInit();
       }
     })];
   }
